@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'SkyproFont';
-    src: url('statosskyeng-v1.001/') format('opentype');
+    src: url('./statosskyeng-v1.001/') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
