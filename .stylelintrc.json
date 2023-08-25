@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "selector-class-pattern": [
+      "^.*$",
+      {
+        "message": ""
+      }
+    ]
+  }
+}
