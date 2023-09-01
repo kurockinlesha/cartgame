@@ -1,42 +1,58 @@
 {
-  "name": "card-game",
-  "version": "1.0.0",
-  "type": "module",
-  "description": "",
-  "main": "./renderStartPage.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": " webpack-dev-server --open",
-    "build": " set NODE_ENV=production webpack",
-    "format": "prettier —write .",
-    "lint:js": "eslint ./src/js/*.js",
-    "lint:css": "stylelint ./*.css",
-    "lint": "npm run lint:js && npm run lint:css",
-    "prepare": "husky install"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "http-server": "^14.1.1",
-    "lodash": "^4.17.21"
-  },
-  "devDependencies": {
-    "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.8.1",
-    "css-minimizer-webpack-plugin": "^5.0.1",
-    "eslint": "^8.47.0",
-    "eslint-plugin-import": "^2.28.0",
-    "html-webpack-plugin": "^5.5.3",
-    "husky": "^8.0.3",
-    "mini-css-extract-plugin": "^2.7.6",
-    "prettier": "^3.0.1",
-    "style-loader": "^3.3.3",
-    "stylelint": "^15.10.2",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-prettier": "^4.0.2",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
-  }
+    "name": "cartgame",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "webpack-dev-server --open",
+        "format": "prettier --write ./level-pages/",
+        "lint:js": "eslint ./level-pages/**/*.ts",
+        "lint:css": "stylelint ./level-pages/**/*.css",
+        "lint:js&css": "npm run lint:js && npm run lint:css",
+        "prepare": "husky install",
+        "build": "cross-env NODE_ENV=production webpack",
+        "lint:ts": "tsc --noEmit",
+        "lint": "eslint . --ext .ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AnnaIllarionova/Card-game.git"
+    },
+    "author": "Anna Illarionova",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AnnaIllarionova/Card-game/issues"
+    },
+    "homepage": "https://github.com/AnnaIllarionova/Card-game#readme",
+    "dependencies": {
+        "cross-env": "^7.0.3",
+        "http-server": "^14.1.1",
+        "lodash": "^4.17.21"
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.14.197",
+        "@typescript-eslint/eslint-plugin": "^6.5.0",
+        "@typescript-eslint/parser": "^6.5.0",
+        "axios": "^1.4.0",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.8.1",
+        "css-minimizer-webpack-plugin": "^5.0.1",
+        "eslint": "^8.48.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "html-webpack-plugin": "^5.5.3",
+        "husky": "^8.0.3",
+        "mini-css-extract-plugin": "^2.7.6",
+        "prettier": "^3.0.2",
+        "style-loader": "^3.3.3",
+        "stylelint": "^15.10.2",
+        "stylelint-config-standard": "^34.0.0",
+        "stylelint-prettier": "^4.0.2",
+        "ts-loader": "^9.4.4",
+        "typescript": "^5.2.2",
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1"
+    }
 }

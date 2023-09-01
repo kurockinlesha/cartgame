@@ -1,0 +1,270 @@
+@font-face {
+    font-family: stratosskyeng;
+    src: url("../fonts/Web\ fonts/stratosskyengweb-regular.woff")
+        format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    padding-left: calc(50% - 488px);
+    padding-right: calc(50% - 488px);
+}
+
+.difficulties {
+    min-height: 774px;
+    background-color: #004980;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.level {
+    background-color: #c2f5ff;
+    width: 480px;
+    height: 459px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.level__text {
+    padding-bottom: 48px;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    width: 208px;
+    text-align: center;
+    color: #004980;
+}
+
+.level__text_result {
+    width: 276px;
+    padding-top: 8px;
+    padding-bottom: 28px;
+}
+
+.level__time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 40px;
+}
+
+.level__time_text {
+    color: #000;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.timer__time_numbers {
+    color: #000;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+}
+
+.level__button_start,
+.level__button_again {
+    border-radius: 12px;
+    background: var(--salad-60, #7ac100);
+    width: 246px;
+    height: 48px;
+    border: none;
+    color: #fff;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    transition: all 0.3s;
+}
+
+.level__button_start:hover,
+.level__button_again:hover {
+    background: #fff;
+    color: #7ac100;
+}
+
+.level__button_start-again,
+.level__button_again-again {
+    margin-bottom: 12px;
+}
+
+.level .choice {
+    display: flex;
+    column-gap: 24px;
+    padding-bottom: 67px;
+}
+
+.level .choice__button {
+    border-radius: 12px;
+    background: #fff;
+    width: 98px;
+    height: 98px;
+    border: none;
+    color: var(--blue-100, #0080c1);
+    text-align: center;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px; /* 112.5% */
+    transition: transform 0.5s;
+}
+
+.level .choice__button:hover {
+    transform: scale(1.05);
+}
+
+.level .choice__button-active {
+    border-radius: 12px;
+    background-color: #7ac100;
+    width: 98px;
+    height: 98px;
+    border: none;
+    color: var(--blue-100, #0080c1);
+    text-align: center;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px; /* 112.5% */
+    transform: scale(1.05);
+}
+
+.field {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 35px;
+    padding-top: 22px;
+    height: 91px;
+}
+
+.timer {
+    width: 155px;
+}
+
+.timer__text {
+    display: flex;
+    flex-direction: row;
+    padding-left: 39px;
+    justify-content: space-between;
+}
+
+.timer__text_min,
+.timer__text_sek {
+    color: #fff;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.timer__box {
+    display: flex;
+}
+
+.timer__numbers {
+    color: #fff;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 64px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+}
+
+.cards__shirt {
+    grid-column: 1fr;
+    width: 100%;
+}
+
+.cards__easy {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cards__medium {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.generated-card {
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
+    background: white;
+    position: relative;
+}
+
+.generated-card__matched {
+    background: greenyellow;
+}
+
+.generated-card__text {
+    color: #000;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: StratosSkyeng, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.generated-card__corner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 23px;
+}
+
+.generated-card__corner_svg svg {
+    width: 6px;
+    height: 6px;
+}
+
+.generated-card__corner_reverse {
+    transform: rotate(180deg);
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+}
+
+.generated-card__svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
