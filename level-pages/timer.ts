@@ -8,18 +8,24 @@ export function useTimer({
     secondsElement: Element;
     minutesElement: Element;
 }) {
-    seconds++;
-    const zeroPlusSeconds = seconds <= 9 ? "0" + seconds : seconds.toString();
+    useLogicOfTimer();
     secondsElement.innerHTML = zeroPlusSeconds;
+    minutesElement.innerHTML = zeroPlusMinutes;
+}
+let zeroPlusSeconds: string = "00";
+let zeroPlusMinutes: string = "00";
+
+export function useLogicOfTimer() {
+    seconds++;
+    zeroPlusSeconds = seconds <= 9 ? "0" + seconds : seconds.toString();
 
     if (seconds > 59) {
         minutes++;
-        const zeroPlusMinutes =
-            minutes <= 9 ? "0" + minutes : minutes.toString();
-        minutesElement.innerHTML = zeroPlusMinutes;
+        zeroPlusMinutes = minutes <= 9 ? "0" + minutes : minutes.toString();
         seconds = 0;
-        secondsElement.innerHTML = "0" + seconds;
+        zeroPlusSeconds = seconds <= 9 ? "0" + seconds : seconds.toString();
     }
+    return seconds;
 }
 
 export function resetTimer(interval: NodeJS.Timeout) {

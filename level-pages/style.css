@@ -17,7 +17,7 @@
 }
 
 .difficulties {
-    min-height: 774px;
+    height: 100vh;
     background-color: #004980;
     display: flex;
     flex-wrap: wrap;

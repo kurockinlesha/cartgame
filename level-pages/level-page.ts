@@ -3,6 +3,7 @@ import { renderMainPage, level } from "./index";
 import { renderGameField, interval } from "./render-game-field";
 import { useMainGameLogic } from "./main-game-logic";
 import { resetTimer } from "./timer";
+import { shuffleCardsArray } from "./shuffled-function";
 
 export const renderLevelPage = ({ gamePage }: { gamePage: Element }) => {
     const levelHtml = `
@@ -48,8 +49,9 @@ export const renderLevelPage = ({ gamePage }: { gamePage: Element }) => {
     if (renderCardsElement) {
         renderCardsElement.innerHTML = cardsForLevel;
     }
-    const cardRanksArrray = ["A", "K", "Q", "J", "10", "9", "8", "7", "6"];
-
+    const cardRanksArray = ["A", "K", "Q", "J", "10", "9", "8", "7", "6"];
+    // const randomRank =
+    //     cardRanksArrray[Math.floor(Math.random() * cardRanksArrray.length)];
     const cardSuitsSvg = {
         spades: `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="26" viewBox="0 0 30 26" fill="none">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4946 22.7216C16.3283 24.7749 18.7912 26 20.9419 26C24.6159 26 28.841 23.9312 29.0247 17.7248C28.8538 11.601 22.1644 6.45377 15.7603 1.52608C15.2805 1.15693 14.8024 0.789017 14.3287 0.422017C14.3287 0.422038 14.3287 0.422057 14.3286 0.422078C14.3286 0.422059 14.3286 0.42204 14.3286 0.422021C14.0942 0.603615 13.8591 0.785433 13.6238 0.967515C7.03343 6.06558 0.177371 11.3692 6.49169e-06 17.7248C0.183705 23.9312 4.77619 26 8.45018 26C10.6009 26 12.8557 24.7749 14.4946 22.7216Z" fill="black"/>
@@ -70,22 +72,19 @@ export const renderLevelPage = ({ gamePage }: { gamePage: Element }) => {
         cardSuitsSvg.diamonds,
         cardSuitsSvg.clubs,
     ];
-
-    const cardsArray = [];
+    // const randomSuit =
+    //     cardSuitsArray[Math.floor(Math.random() * cardSuitsArray.length)];
+    let cardsArray = [];
 
     for (const suit of cardSuitsArray) {
-        for (const rank of cardRanksArrray) {
+        for (const rank of cardRanksArray) {
             cardsArray.push({ rank, suit });
         }
     }
+    // const originalArray = [...cardsArray];
+    // console.log(originalArray);
 
-    function shuffleCardsArray(array: { rank: string; suit: string }[]) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-    }
-    shuffleCardsArray(cardsArray);
+    cardsArray = shuffleCardsArray(cardsArray);
 
     const sliceCardArray = cardsArray.slice(0, cardsCounter / 2);
     const doubleCardArray = sliceCardArray.concat(sliceCardArray);
@@ -93,7 +92,7 @@ export const renderLevelPage = ({ gamePage }: { gamePage: Element }) => {
     const cardsInGame: string[] = [];
 
     (startOverButton as HTMLElement).addEventListener("click", () => {
-
+        // console.log(level);
         resetTimer(interval);
 
         renderGameField({
