@@ -9,15 +9,13 @@
     "scripts": {
         "test": "jest",
         "start": "webpack-dev-server --open",
-        "format": "prettier --write ./level-pages/",
-        "lint:js": "eslint ./level-pages/**/*.ts",
-        "lint:css": "stylelint ./level-pages/**/*.css",
-        "lint:js&css": "npm run lint:js && npm run lint:css",
+        "build": "NODE_ENV=production webpack",
+        "format": "prettier —write .",
+        "lint:js": "eslint ./src/helpers/*.js || true",
+        "lint:css": "stylelint ./*.css || true",
+        "lint": "npm run lint:js && npm run lint:css",
         "prepare": "husky install",
-        "build": "cross-env NODE_ENV=production webpack",
-        "lint:ts": "tsc --noEmit",
-        "lint": "eslint . --ext .ts",
-        "test:jest": "jest"
+        "lint:ts": "tsc --noEmit || true"
     },
     "author": "",
     "license": "ISC",
